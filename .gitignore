@@ -18,7 +18,7 @@
 .glide/
 
 # Golang project vendor packages which should be ignored
-vendor/
+#vendor/
 
 ### Windows ###
 # Windows thumbnail cache files
