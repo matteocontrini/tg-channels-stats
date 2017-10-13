@@ -1,6 +1,0 @@
-Channels = []
-
-BotToken = ""
-
-FirebaseProjectID = ""
-FirebaseCredentialsFile = "config/credentials.json"
