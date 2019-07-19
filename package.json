@@ -1,0 +1,21 @@
+{
+  "name": "tg-channels-stats",
+  "version": "0.0.0",
+  "description": "Telegram channels stats",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
+    "start": "node dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matteocontrini/tg-channels-stats.git"
+  },
+  "author": "Matteo Contrini <matteo@contrini.it>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^12.6.8",
+    "typescript": "^3.5.3"
+  }
+}
