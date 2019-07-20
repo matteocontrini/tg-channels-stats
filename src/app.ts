@@ -19,7 +19,9 @@ createConnection(config.typeorm).then(conn => {
     job = new CronJob("0 0 0 * * *", update, null, true, "Europe/Rome");
     snapshotRepository = conn.getRepository(Snapshot);
 
-    update();
+    if (config.runAtLaunch) {
+        update();
+    }
 }).catch(err => {
     logger.fatal("Connection error", err);
 });

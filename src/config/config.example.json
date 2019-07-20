@@ -9,5 +9,6 @@
         "password": "root",
         "database": "tg-channel-stats",
         "synchronize": true
-    }
+    },
+    "runAtLaunch": false
 }
