@@ -1,8 +1,7 @@
 {
-  "name": "tg-channels-stats",
+  "name": "telegram-monitor",
   "version": "0.0.0",
-  "description": "Telegram channels stats",
-  "main": "index.js",
+  "description": "TelegramMonitor",
   "scripts": {
     "build": "tsc --build",
     "clean": "tsc --build --clean",
