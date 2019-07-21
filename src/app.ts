@@ -32,8 +32,21 @@ async function update() {
 
         try {
             const count = await getMembersCount(channel);
-            const snap = new Snapshot(channel, count);
-            await snapshotRepository.save(snap);
+
+            const lastSnapshot = await snapshotRepository.findOne({
+                where: { channel },
+                order: { date: "DESC" },
+            });
+
+            const previousCount = (lastSnapshot ? lastSnapshot.count : 0);
+
+            if (previousCount !== count) {
+                logger.info(`New count is ${count}, old count is ${previousCount}. Saving...`);
+                const snap = new Snapshot(channel, count);
+                await snapshotRepository.save(snap);
+            } else {
+                logger.info(`Found ${count}, no need to save`);
+            }
         } catch (ex) {
             logger.error("Error updating", channel, ex);
         }
