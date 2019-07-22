@@ -11,7 +11,7 @@ action "Docker Build" {
 action "Docker Tag" {
   uses = "actions/docker/tag@86ff551d26008267bb89ac11198ba7f1d807b699"
   needs = ["Docker Build"]
-  args = "telegramfeeder matteocontrini/telegrammonitor"
+  args = "telegrammonitor matteocontrini/telegrammonitor"
 }
 
 action "Docker Login" {
