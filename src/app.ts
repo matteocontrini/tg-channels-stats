@@ -16,7 +16,7 @@ let snapshotRepository: Repository<Snapshot>;
 config.typeorm.entities = [__dirname + "/entities/*.js"];
 
 createConnection(config.typeorm).then(conn => {
-    job = new CronJob("0 */5 * * * *", update, null, true, "Europe/Rome");
+    job = new CronJob("0 0 * * * *", update, null, true, "Europe/Rome");
     snapshotRepository = conn.getRepository(Snapshot);
 
     if (config.runAtLaunch) {
