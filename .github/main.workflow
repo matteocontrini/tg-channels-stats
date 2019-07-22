@@ -5,13 +5,13 @@ workflow "Build and push" {
 
 action "Docker Build" {
   uses = "actions/docker/cli@86ff551d26008267bb89ac11198ba7f1d807b699"
-  args = "build -t telegram-monitor ."
+  args = "build -t telegrammonitor ."
 }
 
 action "Docker Tag" {
   uses = "actions/docker/tag@86ff551d26008267bb89ac11198ba7f1d807b699"
   needs = ["Docker Build"]
-  args = "telegramfeeder matteocontrini/telegram-monitor"
+  args = "telegramfeeder matteocontrini/telegrammonitor"
 }
 
 action "Docker Login" {
@@ -23,5 +23,5 @@ action "Docker Login" {
 action "GitHub Action for Docker" {
   uses = "actions/docker/cli@86ff551d26008267bb89ac11198ba7f1d807b699"
   needs = ["Docker Login"]
-  args = "push matteocontrini/telegram-monitor"
+  args = "push matteocontrini/telegrammonitor"
 }
