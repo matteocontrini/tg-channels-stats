@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  telegram-monitor:
+    container_name: telegram-monitor
+    network_mode: host
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src/config/config.json:/app/dist/config/config.json
