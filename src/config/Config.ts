@@ -1,4 +1,6 @@
-import * as config from "./config.json";
+import * as fs from "fs";
+
+const config = JSON.parse(fs.readFileSync(__dirname + "/config.json").toString());
 
 class Config {
     public channels: string[];
